@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JS Studio | Websites for growing businesses</title>
+<meta name="description" content="JS Studio builds fast, clean websites for small businesses. Set up by our team, live in days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5fa;--card:#fff;--ink:#14213d;--muted:#55627f;--line:#d5dbe8;--accent:#2f4bff;--on:#fff;--soft:#e3e8f6}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1527;--card:#162039;--ink:#e8ecf7;--muted:#9ba7c6;--line:#2a3554;--accent:#7f93ff;--on:#0e1527;--soft:#1d2848}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Instrument Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3,.logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:4.2rem;gap:1rem}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none}
+nav{display:flex;gap:1.4rem}
+nav a{text-decoration:none;color:var(--muted);font-size:.97rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:var(--on);padding:.8rem 1.4rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:4.5rem 0}
+.tag{display:inline-block;background:var(--soft);padding:.3rem .8rem;border-radius:2rem;font-size:.9rem;margin-bottom:1.2rem}
+h1{font-weight:800;font-size:clamp(2.6rem,7vw,5rem);line-height:1;margin-bottom:1.4rem}
+.hero p.lead{color:var(--muted);font-size:1.15rem;max-width:34rem;margin-bottom:2rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.ticks{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.8rem;color:var(--muted);font-size:.95rem}
+.mock{background:var(--card);border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
+.mock .bar{display:flex;gap:.4rem;padding:.7rem 1rem;border-bottom:1px solid var(--line);background:var(--soft)}
+.mock .bar i{width:.65rem;height:.65rem;border-radius:50%;background:var(--line)}
+.mock .body{padding:1.5rem}
+.mock .l1{height:1.6rem;width:70%;background:var(--accent);border-radius:.3rem;margin-bottom:.9rem}
+.mock .l2{height:.7rem;background:var(--soft);border-radius:.3rem;margin-bottom:.5rem}
+.mock .row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1.2rem}
+.mock .row b{height:4.5rem;background:var(--soft);border-radius:.4rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{text-align:center}
+.stats strong{display:block;font:800 2.2rem "Bricolage Grotesque",sans-serif}
+.stats span{color:var(--muted)}
+section{padding:5rem 0}
+.head{max-width:36rem;margin-bottom:2.5rem}
+h2{font-weight:700;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.08;margin-bottom:.8rem}
+.head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:.8rem;padding:1.6rem}
+.card h3{font-size:1.3rem;margin-bottom:.5rem}
+.card p,.card li{color:var(--muted)}
+.steps .card span{display:inline-block;background:var(--soft);padding:.2rem .7rem;border-radius:2rem;font-size:.85rem;margin-bottom:.8rem}
+.price{font:800 2rem "Bricolage Grotesque",sans-serif;margin:.4rem 0 1rem}
+.price small{font:400 1rem "Instrument Sans",sans-serif;color:var(--muted)}
+.card ul{list-style:none;padding:0;margin-bottom:1.4rem}
+.card li{padding:.25rem 0}
+.card li::before{content:"\2713\00a0\00a0";color:var(--accent);font-weight:700}
+.card.hot{border:2px solid var(--accent)}
+details{background:var(--card);border:1px solid var(--line);border-radius:.6rem;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin-top:.6rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.info p{margin-bottom:1rem;color:var(--muted)}
+.info strong{display:block;color:var(--ink)}
+form{background:var(--card);border:1px solid var(--line);border-radius:.8rem;padding:1.6rem;display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;padding:.7rem .8rem;border:1px solid var(--line);border-radius:.4rem;background:var(--bg);color:var(--ink)}
+.note{font-size:.88rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:2.5rem 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (max-width:52rem){.hero,.contact{grid-template-columns:1fr}nav{display:none}.hero{padding:3rem 0}section{padding:3.5rem 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#">JS Studio</a>
+  <nav><a href="#services">Services</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  <a class="btn" href="#contact">Get a free quote</a>
+</div></header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <span class="tag">Web design studio &middot; Made in Pakistan</span>
+      <h1>Your business, online in days.</h1>
+      <p class="lead">JS Studio designs and launches fast, clean websites for shops, clinics, restaurants and creators. We handle the build, you keep full control.</p>
+      <div class="cta"><a class="btn" href="#contact">Get a free quote</a><a class="btn alt" href="#pricing">See pricing</a></div>
+      <div class="ticks"><span>Built by our team</span><span>Mobile friendly</span><span>Your own domain</span></div>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body"><div class="l1"></div><div class="l2"></div><div class="l2" style="width:85%"></div><div class="l2" style="width:60%"></div><div class="row"><b></b><b></b><b></b></div></div>
+    </div>
+  </div>
+  <div class="stats">
+    <div><strong>3 days</strong><span>average launch time</span></div>
+    <div><strong>100%</strong><span>mobile friendly</span></div>
+    <div><strong>24h</strong><span>reply to every message</span></div>
+  </div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><h2>Everything your website needs.</h2><p>One team, one price, no surprises.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Website design</h3><p>A clean layout with your logo, colors and photos, made to turn visitors into customers.</p></div>
+    <div class="card"><h3>Fast hosting</h3><p>Your site loads quickly and stays online, with HTTPS included.</p></div>
+    <div class="card"><h3>Contact and WhatsApp</h3><p>Visitors message you on WhatsApp or by email in one tap.</p></div>
+    <div class="card"><h3>Easy updates</h3><p>Send us a change and we update prices, photos or text for you.</p></div>
+    <div class="card"><h3>Google ready</h3><p>Page titles and descriptions set up so people can find you in search.</p></div>
+    <div class="card"><h3>Your own domain</h3><p>A name like yourbusiness.com that you own, connected for you.</p></div>
+  </div>
+</div></section>
+
+<section id="how" style="background:var(--soft)"><div class="wrap">
+  <div class="head"><h2>Live in a few days.</h2></div>
+  <div class="grid steps">
+    <div class="card"><span>Day 1</span><h3>Share your details</h3><p>Send your logo, services, prices and photos.</p></div>
+    <div class="card"><span>Day 2 to 3</span><h3>We build it</h3><p>We design your site and send you a preview to approve.</p></div>
+    <div class="card"><span>Day 4</span><h3>Go live</h3><p>We connect your domain and publish. You are online.</p></div>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <div class="head"><h2>Simple prices in rupees.</h2><p>Replace these example prices with your own.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Starter</h3><div class="price">Rs 15,000 <small>one time</small></div><ul><li>One page website</li><li>Mobile friendly</li><li>WhatsApp button</li></ul><a class="btn alt" href="#contact">Choose Starter</a></div>
+    <div class="card hot"><h3>Business</h3><div class="price">Rs 30,000 <small>one time</small></div><ul><li>Up to 5 pages</li><li>Contact form</li><li>Google ready</li></ul><a class="btn" href="#contact">Choose Business</a></div>
+    <div class="card"><h3>Custom</h3><div class="price">Let's talk</div><ul><li>Online store or booking</li><li>Multiple languages</li><li>Ongoing support</li></ul><a class="btn alt" href="#contact">Talk to us</a></div>
+  </div>
+</div></section>
+
+<section id="faq" style="background:var(--soft)"><div class="wrap">
+  <div class="head"><h2>Before you ask.</h2></div>
+  <details><summary>Do I need technical knowledge?</summary><p>No. We do the build and setup. You only send us your business details.</p></details>
+  <details><summary>Can I use my own domain?</summary><p>Yes. We connect the domain you already own or help you buy one.</p></details>
+  <details><summary>Can I change things later?</summary><p>Yes. Send us the change and we update the site for you.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <div class="info">
+    <h2>Get your free quote.</h2>
+    <p>Tell us about your business and we will reply with a plan and price.</p>
+    <p><strong>WhatsApp</strong>+92 300 0000000</p>
+    <p><strong>Email</strong>hello@jsstudio.digital</p>
+  </div>
+  <form id="f">
+    <label>Your name<input name="name" required></label>
+    <label>Business name<input name="biz"></label>
+    <label>Business type<select name="type"><option>Restaurant or cafe</option><option>Clinic</option><option>Salon</option><option>Shop</option><option>Other</option></select></label>
+    <label>What do you need?<textarea name="msg" rows="3"></textarea></label>
+    <button class="btn" type="submit">Send on WhatsApp</button>
+    <p class="note">This opens WhatsApp with your details filled in. Nothing is sent until you press send there.</p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>&copy; 2026 JS Studio</span><span>javeriashabbir366@gmail.com</span></div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var d=new FormData(this),n='923004884859'; /* change to your WhatsApp number, country code first, no + */
+  var t='Hi JS Studio, I want a website.%0AName: '+encodeURIComponent(d.get('name'))+'%0ABusiness: '+encodeURIComponent(d.get('biz'))+'%0AType: '+encodeURIComponent(d.get('type'))+'%0ANeed: '+encodeURIComponent(d.get('msg'));
+  window.open('https://wa.me/'+n+'?text='+t,'_blank');
+});
+</script>
+</body>
+</html>
